@@ -56,30 +56,3 @@ Desenvolvido por Vitor Oliveira Cupaiol, como parte de um portfólio de engenhar
 O projeto pode ser executado no Databricks Community Edition gratuitamente.
 A estrutura pode ser expandida com uso de ferramentas como Apache Airflow, DBT, ou ingestão via streaming (Kafka, Auto Loader, etc).
 
-
-+-------------------+     +--------------------+     +--------------------+     +-------------------------+
-|   Fonte de Dados  | --> |     Camada BRONZE  | --> |     Camada SILVER  | --> |      Camada GOLD        |
-|   Arquivos CSV    |     |    (Raw/Staging)   |     |   (Cleaned/Joined) |     | (Modelagem Dimensional) |
-+-------------------+     +--------------------+     +--------------------+     +-------------------------+
-
-                                                                           
-+-------------------+     +----------------+     
-|  dim_produto      | <-- |                |     
-+-------------------+     |                |     
-+-------------------+     |                |     
-|  dim_fabricante   | <-- |                |     
-+-------------------+     |                |     
-+-------------------+     |                |     
-|  dim_categoria    | <-- |   FT_VENDAS    |     
-+-------------------+     |                |     
-+-------------------+     |                |     
-|  dim_segmento     | <-- |                |     
-+-------------------+     |                |     
-+-------------------+     |                |          
-|  dim_cliente      | <-- |                |      
-+-------------------+     +----------------+          
-          |
-          v
-+-------------------+
-|   dim_geografia   |
-+-------------------+
